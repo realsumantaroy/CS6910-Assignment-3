@@ -45,15 +45,16 @@ For reference, a Jupyter notebook, `command_line_example.ipynb`, is included in 
 
 ## /Question 1
 
-This folder contains the solution to question 1. There is a jupyter notebook named `Question_1.ipynb`, which gives a simple structure of an encoder-decoder based seq2seq model with no attention mechanicsm. The code is very modular and user-friendly, where the user can choose the various hyper-parameters like, input embedding size, dimension of hidden layer (states), the dropout probability, etc. 
+This folder contains the solution to question 1. There is a jupyter notebook named `Question_1.ipynb`, which provides a simple structure of an encoder-decoder-based seq2seq model with no attention mechanism. The code is modular and user-friendly, allowing users to choose various hyperparameters such as input embedding size, dimension of hidden layers (states), dropout probability, etc.
 
 ## /Question 2
 
-This folder contains the solution to question 2. There is a jupyter notebook named `Question_2.ipynb`, which used the encoder-decoder based seq2seq model with no attention mechanicsm as defined in Question 1, and then also defines a train function which is used to train the optimizer. A Bayesian hyperparameter tuning is conducted using the WandB's sweep functionality. The notebook contains the the system generated logs and the hyper-parameter tuning in details. If you want to see how each and every run in each sweep performed, you can easily navigate to that particular step and click on the WandB link to see that log in detail. My WandB project is public for you to view.
+This folder contains the solution to Question 2. There is a jupyter notebook named `Question_2.ipynb`, which uses the encoder-decoder-based seq2seq model without attention mechanism as defined in Question 1. Additionally, it defines a training function used to train the optimizer. Bayesian hyperparameter tuning is conducted using WandB's sweep functionality. The notebook includes system-generated logs and detailed hyperparameter tuning results. Each run's performance in the sweep can be viewed by navigating to the corresponding WandB link. My WandB project is public for you to view.
 
 ## /Question 3
 
-This folder contains a Jupyter notebook named `Question_3.ipynb`, which uses the best hyper-parameter from the Sweep conducted last time and then uses those hyperparameters to train the model again and then the accuracy of the model is checked on the test data.
+This folder contains a Jupyter notebook named `Question_3.ipynb`, which uses the best hyper-parameter from the Sweep conducted previously. The model is re-trained using these optimal hyperparameters, and its accuracy is evaluated on the test data.
+
 
 ## /Question 5
 
