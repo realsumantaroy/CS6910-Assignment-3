@@ -34,10 +34,15 @@ In the root of this GitHub repository, you will find two Python scripts, `train_
   | `-nl`, `--n_layers` | `3` | Number of hidden encoder/decoder layers |
   | `-in_emb`, `--in_embed` | `64` | Length of input embedding |
 
-Running these scripts trains the respective seq2seq models using the specified hyperparameters. During training, the scripts display the training loss, validation loss, training accuracy, and validation accuracy at each epoch. 
+Running these scripts trains the respective seq2seq models using the specified hyperparameters (through the command line arguments). During training, the scripts display the training loss, validation loss, training accuracy, and validation accuracy at each epoch. 
 
-For reference, a Jupyter notebook, `command_line_example.ipynb`, is included in the root directory. This notebook demonstrates how to call these two Python scripts and shows sample output. The two commands are:
+For reference, a Jupyter notebook, `command_line_example.ipynb`, is included in the root directory. This notebook demonstrates how to call these two Python scripts and shows sample output. For example, two sample commands are:
 
 ```bash
 !python train_noattention.py -wp CS6910_assignment_3 -we sumanta_roy
 !python train_attention.py -wp CS6910_assignment_3 -we sumanta_roy
+
+## /Question 1
+
+This folder
+
