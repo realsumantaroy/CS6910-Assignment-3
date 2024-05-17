@@ -41,9 +41,9 @@ For reference, a Jupyter notebook, `command_line_example.ipynb`, is included in 
 ```bash
 !python train_noattention.py -wp CS6910_assignment_3 -we sumanta_roy
 !python train_attention.py -wp CS6910_assignment_3 -we sumanta_roy
-```bash
+```
 
-## /Question 1
+## Question 1
 
-This folder
+This folder contain solution to question 1.
 
