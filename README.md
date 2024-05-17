@@ -1,48 +1,43 @@
 # CS6910-Assignment-3
 
-This README file guides you through all the code present in this repository and provides instructions on how to implement it correctly.
-Also, link to my WandB project: [https://wandb.ai/sumanta_roy/CS6910_assignment_1/reports/Sumanta-s-CS6910-Assignment-1--Vmlldzo3MTU4NTE5](https://wandb.ai/sumanta_roy/CS6910_assignment_3/reports/CS6910-Assignment-3--Vmlldzo3OTI0ODcx)
-
-I will guide you though all the code that is present in this repository and how to use each one of them.
+This README file guides you through the code present in this repository and provides instructions on how to implement it correctly. For more details, refer to my WandB project: [CS6910-Assignment-3 Report](https://wandb.ai/sumanta_roy/CS6910_assignment_3/reports/CS6910-Assignment-3--Vmlldzo3OTI0ODcx).
 
 ## Root Directory
 
-In the root GitHub repository, you will find two python scripts, named `train_noattention.py` and `train_attention.py`. Both of these scripts accept command line arguments, and does the followig tasks:
+In the root of this GitHub repository, you will find two Python scripts, `train_noattention.py` and `train_attention.py`. Both scripts accept command-line arguments and perform the following tasks:
 
-- `train_noattention.py`: It takes command-line arguments the hyper-parameters of a seq-2-seq model with no attention mechanism. If you don't explicitly provide any command line arguments, it will select the default hyper-parameters (which are the best hyper-parameters, leading to the highest accuracy found using a Bayesian hyperparameter tuning search). The arguments that it supports are:
-
-  | Name | Default Value | Description |
-  | :---: | :-------------: | :----------- |
-  | `-wp`, `--wandb_project` | myprojectname | Project name used to track experiments in Weights & Biases dashboard |
-  | `-we`, `--wandb_entity` | myname  | Wandb Entity used to track experiments in the Weights & Biases dashboard. |
-  | `-e`, `--epochs` | 10 | Choose the number of epochs for training |
-  | `-b`, `--batch_size` | 64 | Choose the batch size for training the model |
-  | `-do`, `--dropout` | 0.3 | Choose the neuron dropout probability |
-  | `-cell_type`, `--cell_type` | 'LSTM' | Choose the type of recurrent cell; choices: ["LSTM", "RNN", "GRU"]|
-  | `-hs`, `--hidden_size` | 256 | Choose the size of hidden units in the encoder-decoder networks|
-  | `-nl`, `--n_layers` | 2 | Choose the number of hidden encoder/decoder layers|
-  | `-in_emb`, `--in_embed` | 256 | Choose the length of input embedding|
-
-- `train_attention.py`: Just like it's counterpart, it takes command-line arguments the hyper-parameters of a seq-2-seq model with an attention mechanism. If you don't explicitly provide any command line arguments, it will select the default hyper-parameters (which are the best hyper-parameters, leading to the highest accuracy found using a Bayesian hyperparameter tuning search). The arguments that it supports are:
+- **`train_noattention.py`**: This script trains a seq2seq model without an attention mechanism using the specified hyperparameters. If no arguments are provided, it uses default hyperparameters optimized through Bayesian hyperparameter tuning. The supported arguments are:
 
   | Name | Default Value | Description |
   | :---: | :-------------: | :----------- |
-  | `-wp`, `--wandb_project` | myprojectname | Project name used to track experiments in Weights & Biases dashboard |
-  | `-we`, `--wandb_entity` | myname  | Wandb Entity used to track experiments in the Weights & Biases dashboard. |
-  | `-e`, `--epochs` | 10 | Choose the number of epochs for training |
-  | `-b`, `--batch_size` | 256 | Choose the batch size for training the model |
-  | `-do`, `--dropout` | 0.2 | Choose the neuron dropout probability |
-  | `-cell_type`, `--cell_type` | 'GRU' | Choose the type of recurrent cell; choices: ["LSTM", "RNN", "GRU"]|
-  | `-hs`, `--hidden_size` | 256 | Choose the size of hidden units in the encoder-decoder networks|
-  | `-nl`, `--n_layers` | 3 | Choose the number of hidden encoder/decoder layers|
-  | `-in_emb`, `--in_embed` | 64 | Choose the length of input embedding|
+  | `-wp`, `--wandb_project` | `myprojectname` | Project name for tracking experiments in Weights & Biases dashboard |
+  | `-we`, `--wandb_entity` | `myname` | Wandb Entity for tracking experiments in the Weights & Biases dashboard |
+  | `-e`, `--epochs` | `10` | Number of training epochs |
+  | `-b`, `--batch_size` | `64` | Batch size for training |
+  | `-do`, `--dropout` | `0.3` | Dropout probability |
+  | `-cell_type`, `--cell_type` | `LSTM` | Type of recurrent cell; choices: ["LSTM", "RNN", "GRU"] |
+  | `-hs`, `--hidden_size` | `256` | Size of hidden units in the encoder-decoder networks |
+  | `-nl`, `--n_layers` | `2` | Number of hidden encoder/decoder layers |
+  | `-in_emb`, `--in_embed` | `256` | Length of input embedding |
 
-It is noted that calling any of these would train the particular seq2seq model using the specified hyperparameters (through the command line). At each epoch, the code displays the training loss, validation loss, training accuracy, and validation accuracy. For reference, I have also included a python notebook `command_line_example.ipynb` in the root directory itself, which basically calls these two python scipts and shows a sample output. The two lines were called as:
+- **`train_attention.py`**: This script trains a seq2seq model with an attention mechanism using the specified hyperparameters. If no arguments are provided, it uses default hyperparameters optimized through Bayesian hyperparameter tuning. The supported arguments are:
 
-`!python train_noattention.py -wp CS6910_assignment_3 -we sumanta_roy`
+  | Name | Default Value | Description |
+  | :---: | :-------------: | :----------- |
+  | `-wp`, `--wandb_project` | `myprojectname` | Project name for tracking experiments in Weights & Biases dashboard |
+  | `-we`, `--wandb_entity` | `myname` | Wandb Entity for tracking experiments in the Weights & Biases dashboard |
+  | `-e`, `--epochs` | `10` | Number of training epochs |
+  | `-b`, `--batch_size` | `256` | Batch size for training |
+  | `-do`, `--dropout` | `0.2` | Dropout probability |
+  | `-cell_type`, `--cell_type` | `GRU` | Type of recurrent cell; choices: ["LSTM", "RNN", "GRU"] |
+  | `-hs`, `--hidden_size` | `256` | Size of hidden units in the encoder-decoder networks |
+  | `-nl`, `--n_layers` | `3` | Number of hidden encoder/decoder layers |
+  | `-in_emb`, `--in_embed` | `64` | Length of input embedding |
 
-`!python train_attention.py -wp CS6910_assignment_3 -we sumanta_roy`
+Running these scripts trains the respective seq2seq models using the specified hyperparameters. During training, the scripts display the training loss, validation loss, training accuracy, and validation accuracy at each epoch. 
 
-d
+For reference, a Jupyter notebook, `command_line_example.ipynb`, is included in the root directory. This notebook demonstrates how to call these two Python scripts and shows sample output. The two commands are:
 
-
+```bash
+!python train_noattention.py -wp CS6910_assignment_3 -we sumanta_roy
+!python train_attention.py -wp CS6910_assignment_3 -we sumanta_roy
