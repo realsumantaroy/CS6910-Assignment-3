@@ -21,6 +21,28 @@ In the root GitHub repository, you will find two python scripts, named `train_no
   | `-cell_type`, `--cell_type` | 'LSTM' | Choose the type of recurrent cell; choices: ["LSTM", "RNN", "GRU"]|
   | `-hs`, `--hidden_size` | 256 | Choose the size of hidden units in the encoder-decoder networks|
   | `-nl`, `--n_layers` | 2 | Choose the number of hidden encoder/decoder layers|
-  | `-in_emb`, `--in_embed` | 256 | Choose the length of input embedding| 
+  | `-in_emb`, `--in_embed` | 256 | Choose the length of input embedding|
+
+- `train_attention.py`: Just like it's counterpart, it takes command-line arguments the hyper-parameters of a seq-2-seq model with an attention mechanism. If you don't explicitly provide any command line arguments, it will select the default hyper-parameters (which are the best hyper-parameters, leading to the highest accuracy found using a Bayesian hyperparameter tuning search). The arguments that it supports are:
+
+  | Name | Default Value | Description |
+  | :---: | :-------------: | :----------- |
+  | `-wp`, `--wandb_project` | myprojectname | Project name used to track experiments in Weights & Biases dashboard |
+  | `-we`, `--wandb_entity` | myname  | Wandb Entity used to track experiments in the Weights & Biases dashboard. |
+  | `-e`, `--epochs` | 10 | Choose the number of epochs for training |
+  | `-b`, `--batch_size` | 256 | Choose the batch size for training the model |
+  | `-do`, `--dropout` | 0.2 | Choose the neuron dropout probability |
+  | `-cell_type`, `--cell_type` | 'GRU' | Choose the type of recurrent cell; choices: ["LSTM", "RNN", "GRU"]|
+  | `-hs`, `--hidden_size` | 256 | Choose the size of hidden units in the encoder-decoder networks|
+  | `-nl`, `--n_layers` | 3 | Choose the number of hidden encoder/decoder layers|
+  | `-in_emb`, `--in_embed` | 64 | Choose the length of input embedding|
+
+It is noted that calling any of these would train the particular seq2seq model using the specified hyperparameters (through the command line). At each epoch, the code displays the training loss, validation loss, training accuracy, and validation accuracy. For reference, I have also included a python notebook `command_line_example.ipynb` in the root directory itself, which basically calls these two python scipts and shows a sample output. The two lines were called as:
+
+`!python train_noattention.py -wp CS6910_assignment_3 -we sumanta_roy`
+
+`!python train_attention.py -wp CS6910_assignment_3 -we sumanta_roy`
+
+d
 
 
