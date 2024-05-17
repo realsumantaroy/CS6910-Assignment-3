@@ -1,6 +1,6 @@
 # CS6910-Assignment-3
 
-This README file guides you through the code present in this repository and provides instructions on how to implement it correctly. For more details, refer to my WandB project: [CS6910-Assignment-3 Report](https://wandb.ai/sumanta_roy/CS6910_assignment_3/reports/CS6910-Assignment-3--Vmlldzo3OTI0ODcx).
+This README file guides you through the code present in this repository and provides instructions on how to implement it correctly. For more details, refer to my WandB project: [My WandB Report](https://wandb.ai/sumanta_roy/CS6910_assignment_3/reports/CS6910-Assignment-3--Vmlldzo3OTI0ODcx).
 
 ## Root Directory
 
